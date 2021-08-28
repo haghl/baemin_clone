@@ -1,0 +1,739 @@
+@charset "utf-8";
+
+html {
+  width: 100%;
+  height: 100%;
+}
+body {
+  width: 100%;
+  height: 100%;
+}
+
+/* 레이아웃 */
+.wrapper {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+.wrap {
+  width: 1024px;
+  height: 100%;
+  margin: 0 auto;
+  padding-left: 50px;
+  position: relative;
+  box-sizing: border-box;
+}
+
+/* 상위 고정 */
+.top_fixed .wrap {
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  top: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+.top_fixed .logo {
+  width: 142px;
+  transition: all 0.5s ease-in-out;
+}
+.top_fixed .top_sns {
+  margin-right: 98px;
+  display: flex;
+  transition: all 0.5s ease-in-out;
+}
+.top_fixed .top_sns li {
+  margin: 0 11px;
+}
+.top_fixed .top_sns li a {
+  display: block;
+}
+.top_fixed .fixed_app_down {
+  width: 200px;
+  position: absolute;
+  top: 75px;
+  right: 0;
+  transition: all 0.5s ease-in-out;
+  opacity: 0;
+  z-index: 2;
+}
+.top_fixed .btn_rider {
+  width: 190px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transition: all 0.5s ease-in-out;
+  z-index: 2;
+}
+.top_fixed .scroll {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: jump 0.5s ease 0s 3 forwards;
+  z-index: 2;
+}
+
+/* 컨테이너 */
+.container {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+}
+.container.on {
+  transition: top 0.5s ease-in-out;
+}
+
+/* 헤더 */
+header {
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  position: absolute;
+}
+header .header_bg {
+  height: 100vh;
+  background: url(../img/main_03_2x.jpg) no-repeat center center/cover;
+  animation: zoom-in 1s 1 ease normal;
+}
+header .wrap {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.header {
+  width: 100%;
+  height: 100%;
+}
+.header h1 {
+  width: 440px;
+  padding-top: 187px;
+}
+.header .header_app_down {
+  width: 284px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+/* 공동 배경 */
+.container > div {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: #2ac1bc;
+  font-size: 15px;
+  color: #fff;
+  font-weight: 300;
+}
+.container > div h1 {
+  width: 500px;
+  padding: 165px 0 28px;
+}
+.container > div p {
+  line-height: 21px;
+}
+.container > div span {
+  display: block;
+  margin-top: 15px;
+  line-height: 1;
+}
+
+/* Section 1 */
+.section_content_1 .bikeroad {
+  width: 232px;
+  position: absolute;
+  bottom: 13%;
+  right: 21%;
+}
+.section_content_1 .bikerider {
+  width: 204px;
+  position: absolute;
+  bottom: 12%;
+  right: 19%;
+}
+.section_content_1.animation .bikerider {
+  animation: bike 0.5s 1 ease forwards;
+}
+
+/* section 2 */
+.section_content_2 .people {
+  width: 440px;
+  position: absolute;
+  bottom: 0;
+  right: 1%;
+}
+.section_content_2.animation .people {
+  animation: slideIn 0.8s 1 ease forwards;
+}
+
+/* section 3 */
+.section_content_3 .present {
+  width: 400px;
+  position: absolute;
+  bottom: 0;
+  right: 13%;
+}
+.section_content_3.animation .present {
+  animation: slideIn 0.8s ease forwards;
+}
+
+/* section 4 */
+.section_content_4 .shoppinglive {
+  width: 400px;
+  position: absolute;
+  bottom: 0;
+  right: 15%;
+}
+.section_content_4.animation .shoppinglive {
+  animation: slideIn 0.8s ease forwards;
+}
+
+/* section 5 */
+.section_content_5 .bmart_rider {
+  width: 400px;
+  position: absolute;
+  bottom: 27%;
+  right: 15%;
+}
+.section_content_5.animation .bmart_rider {
+  animation: move-left 0.8s ease forwards;
+}
+
+/* section 6 */
+.section_content_6 .flag {
+  width: 350px;
+  position: absolute;
+  bottom: 0;
+  right: 17%;
+}
+.section_content_6.animation .flag {
+  animation: slideIn 0.8s ease forwards;
+}
+
+/* 푸터 */
+footer {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: #fff;
+}
+footer .wrap {
+  padding: 135px 0 0 96px;
+  display: flex;
+  justify-content: space-between;
+}
+footer .footer_left {
+  width: 350px;
+}
+footer .footer_link {
+  width: 100%;
+  height: 75px;
+  margin-bottom: 50px;
+  display: flex;
+  align-content: space-between;
+  flex-wrap: wrap;
+}
+footer .footer_link li {
+  width: 49%;
+}
+footer .footer_link li a {
+  display: block;
+  width: 100%;
+}
+footer .footer_link li a img {
+  width: auto;
+  height: 30px;
+}
+
+footer .footer_sns {
+  display: flex;
+  align-items: center;
+  margin-bottom: 48px;
+}
+footer .footer_sns li {
+  width: 35px;
+  margin-right: 20px;
+}
+footer .footer_sns li:first-child {
+  margin-right: 10px;
+}
+
+footer .copyright {
+  line-height: 24px;
+  font-size: 14px;
+  color: #333;
+}
+footer .copyright li:nth-child(2) {
+  margin: 18px 0;
+}
+footer .copyright a {
+  display: inline-block;
+  position: relative;
+}
+footer .copyright a:after {
+  content: "";
+  width: 100%;
+  height: 4px;
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  background: url(../img/link-line_01_2x.png) no-repeat center center;
+}
+
+footer .footer_slogan {
+  width: 176px;
+  margin-right: 253px;
+}
+
+/* 모달 팝업창 */
+.modal {
+  width: 100%;
+  height: 100%;
+  display: none;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+.modal .modal_container {
+  width: 100%;
+  height: 50%;
+  position: absolute;
+  bottom: -50%;
+  background: #fff;
+  transition: bottom 0.5s ease-in-out;
+}
+.modal .wrap {
+  padding: 40px;
+  text-align: center;
+  background: url(../img/bg_down_2x.png) no-repeat bottom -5% right/100px;
+}
+.modal p img {
+  width: auto;
+  height: 25px;
+  margin: 0 auto;
+}
+.modal span {
+  display: block;
+  padding: 30px 0 13px;
+  line-height: 1;
+  font-size: 12px;
+  color: #2ac1bc;
+}
+.modal .modal_close {
+  position: absolute;
+  top: 40px;
+  right: 0;
+}
+.modal .phone {
+  width: 320px;
+  height: 16px;
+  margin: 0 auto;
+  padding: 17px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #333;
+  border-radius: 50px;
+}
+.modal .phone label {
+  width: 100%;
+  height: 52px;
+}
+.modal .phone #phone_num {
+  width: 100%;
+  line-height: 52px;
+  border: 0;
+  background: none;
+  font-size: 14px;
+  -webkit-appearance: none;
+  appearance: none;
+  outline: none;
+}
+#phone_num::placeholder {
+  color: #ccc;
+}
+.modal .phone .send_num img {
+  width: auto;
+  height: 16px;
+}
+.modal .check {
+  margin: 30px 0 130px;
+  font-size: 13px;
+}
+.modal .check #checkbox {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+.modal .check label {
+  position: relative;
+}
+.modal .check input[type="checkbox"] + label:before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  bottom: 0;
+  left: -30px;
+  background: url(../img/rectanglebox_2x.png) no-repeat bottom left/100%;
+}
+.modal .check input[type="checkbox"]:checked + label:before {
+  height: 32px;
+  background-image: url(../img/rectangle-7_2x.png);
+}
+.modal .check a {
+  margin-left: 10px;
+  text-decoration: underline;
+  color: #9b9b9b;
+}
+.modal .modal_line img {
+  width: 370px;
+  margin: 0 auto;
+}
+.modal .phone_notice {
+  width: 330px;
+  margin: 24px auto 0;
+  text-align: left;
+  font-size: 10px;
+  color: #888;
+}
+.modal .phone_notice li {
+  line-height: 17px;
+}
+/* 모바일용 */
+.modal .modal_mobile {
+  display: none;
+}
+.modal .modal_mobile img {
+  width: 80%;
+  margin: 0 auto;
+}
+
+/* 페이저 */
+.pager {
+  position: absolute;
+  right: 10%;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: opacity 0.5s ease-in-out;
+}
+.pager li {
+  width: 24px;
+  height: 24px;
+  background: url(../img/dotScroll02_2x.png) no-repeat center center/cover;
+  cursor: pointer;
+}
+.pager li:first-child,
+.pager li:last-child {
+  display: none;
+}
+.pager li.on {
+  background-image: url(../img/dotSelect_2x.png);
+}
+
+/* 애니메이션 */
+@keyframes jump {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  20% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  40% {
+    -webkit-transform: translateY(-30px);
+    transform: translateY(-30px);
+  }
+  50% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  60% {
+    -webkit-transform: translateY(-15px);
+    transform: translateY(-15px);
+  }
+  80% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes zoom-in {
+  0% {
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+@keyframes bike {
+  0% {
+    -webkit-transform: translateX(0) translateY(0);
+    transform: translateX(0) translateY(0);
+  }
+  100% {
+    -webkit-transform: translateX(60%) translateY(60%);
+    transform: translateX(60%) translateY(60%);
+  }
+}
+
+@keyframes move {
+  0% {
+    -webkit-transform: translateY(100%);
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes move-left {
+  0% {
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(25%);
+    transform: translateX(25%);
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    bottom: -300px;
+    opacity: 0;
+  }
+  to {
+    bottom: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/* 미디어 쿼리 */
+/* 노트북 */
+@media (max-width: 1024px) {
+  .wrap {
+    width: 100%;
+  }
+
+  .top_fixed .top_sns {
+    display: none;
+  }
+  .top_fixed .fixed_app_down {
+    top: -30px;
+  }
+  .top_fixed .scroll {
+    left: 5%;
+  }
+
+  .container > div h1 {
+    width: 600px;
+    padding-bottom: 56px;
+  }
+
+  .section_content_2 .people {
+    width: 500px;
+  }
+
+  .section_content_5 .bmart_rider {
+    bottom: 10%;
+    right: 30%;
+  }
+
+  footer .wrap {
+    flex-flow: column-reverse nowrap;
+    padding: 50px;
+    justify-content: space-around;
+  }
+  footer .footer_slogan {
+    width: 300px;
+  }
+
+  .modal .wrap {
+    background-position: bottom -5% right 5%;
+  }
+  .modal .modal_close {
+    right: 5%;
+  }
+}
+
+/* 타블렛 */
+@media (max-width: 768px) {
+  .wrap {
+    padding: 0 30px;
+  }
+
+  .top_fixed .fixed_app_down {
+    width: 150px;
+  }
+  .top_fixed .scroll {
+    width: 50px;
+  }
+
+  .header h1 {
+    width: 100%;
+  }
+  .header .header_app_down {
+    width: 230px;
+  }
+
+  .container > div h1 {
+    width: 100%;
+  }
+  .section_content_1 .bikeroad {
+    width: 200px;
+    right: 23%;
+  }
+  .section_content_1 .bikerider {
+    right: 20%;
+  }
+
+  .section_content_3 .present {
+    width: 290px;
+  }
+
+  .section_content_4 .shoppinglive {
+    width: 300px;
+  }
+
+  .section_content_5 .bmart_rider {
+    width: 300px;
+    right: 20%;
+  }
+
+  .modal .modal_container {
+    height: auto;
+  }
+  .modal .wrap {
+    background: none;
+  }
+  .modal .modal_pc {
+    display: none;
+  }
+  .modal .modal_mobile {
+    display: block;
+  }
+}
+
+@media (max-width: 480px) {
+  .top_fixed .btn_rider {
+    width: 150px;
+  }
+  .top_fixed .fixed_app_down {
+    width: 130px;
+  }
+
+  .header .header_app_down {
+    width: 150px;
+  }
+
+  .container > div h1 {
+    padding: 120px 0 16px;
+  }
+  .container > div p {
+    width: 90%;
+  }
+
+  .section_content_1 .bikeroad {
+    width: 40%;
+  }
+  .section_content_1 .bikerider {
+    width: 40%;
+  }
+
+  .section_content_2 .people {
+    width: 70%;
+  }
+
+  .section_content_3 .present {
+    width: 50%;
+  }
+
+  .section_content_4 .shoppinglive {
+    width: 50%;
+  }
+
+  .section_content_5 .bmart_rider {
+    width: 50%;
+    bottom: 5%;
+  }
+
+  .section_content_6.animation .flag {
+    width: 70%;
+    right: 13%;
+  }
+
+  footer .wrap {
+    padding: 30px;
+  }
+  footer .footer_left {
+    width: 100%;
+  }
+  footer .footer_link {
+    width: 80%;
+    height: 50px;
+    margin-bottom: 15px;
+  }
+  footer .footer_link li a img {
+    height: 20px;
+  }
+  footer .footer_sns {
+    margin-bottom: 15px;
+  }
+  footer .footer_sns li {
+    width: 30px;
+  }
+  footer .copyright {
+    font-size: 13px;
+  }
+  footer .copyright li:nth-child(2) {
+    margin: 5px 0;
+  }
+  footer .footer_slogan {
+    width: 60%;
+  }
+
+  .modal .modal_close {
+    width: 30px;
+  }
+
+  .pager {
+    right: 3%;
+  }
+}
